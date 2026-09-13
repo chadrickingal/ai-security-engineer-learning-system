@@ -21,39 +21,25 @@ def div(firstNumber, secondNumber):
     total = firstNumber / secondNumber
     return total
 
-# Choosing operator function based on input
-def operation(operator, firstNumber, secondNumber):
+# Output Function to print the results
+def operation_Output(operator, firstNumber, secondNumber):
     match operator:
         case '+':
             print("\nAddition (+)")
-            add(firstNumber, secondNumber)
-        case '-':
-            print("\nSubtraction (-)")
-            sub(firstNumber, secondNumber)
-        case '*': 
-            print("\nMultiply (*)")
-            mult(firstNumber, secondNumber)
-        case '/':
-            print("\nDivision (/)")
-            div(firstNumber, secondNumber)
-        case _:
-            print("\nOperator not Found [404]")
-
-# Output Function to print the results
-def output(operator, firstNumber, secondNumber):
-    match operator:
-        case '+':
             print(f"Result: {firstNumber} {operator} {secondNumber} = {add(firstNumber,secondNumber)}")
         case '-':
+            print("\nSubtraction (-)")
             print(f"Result: {firstNumber} {operator} {secondNumber} = {sub(firstNumber,secondNumber)}")
         case '*': 
+            print("\nMultiply (*)")
             print(f"Result: {firstNumber} {operator} {secondNumber} = {mult(firstNumber,secondNumber)}")
         case '/':
+            print("\nDivision (/)")
             print(f"Result: {firstNumber} {operator} {secondNumber} = {div(firstNumber,secondNumber)}")
         case _:
-            print("Result not Found [404")
+            print("Result Not Found [404]")
 
-# Inputs with error handling main function
+# Inputs with error handling 
 while True:
 
     try:
@@ -67,14 +53,15 @@ while True:
         print("\nOperator |+|-|*|/|")
         operator = input(": ")
 
-        operation(operator, firstNumber, secondNumber)
-        output(operator, firstNumber, secondNumber)
+        operation_Output(operator, firstNumber, secondNumber)
 
-        choice = input("\nCalculate again? [Y/n] ")
+        choice = input("\nCalculate again? [Y/n]\n:")
         if choice.lower() == "n":
             break
         elif choice.lower() == 'y':
             continue
+        else: 
+            print("Input Not Found [404]")
         
     except ValueError:
         print("\nInvalid Inputs\n")
