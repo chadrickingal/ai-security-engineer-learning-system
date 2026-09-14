@@ -55,10 +55,10 @@ while True:
 
         operation_Output(operator, firstNumber, secondNumber)
 
-        choice = input("\nCalculate again? [Y/n]\n:")
-        if choice.lower() == "n":
+        choice = input("\nCalculate again? [Y/n]\n:").lower
+        if choice == 'n':
             break
-        elif choice.lower() == 'y':
+        elif choice == 'y':
             continue
         else: 
             print("Input Not Found [404]")
